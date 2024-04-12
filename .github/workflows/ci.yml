@@ -160,6 +160,8 @@ jobs:
         run: |
           # Don't update remote cache
           export GITHUB_ACTIONS=false
+          mkdir -p ./userpatches
+          curl -s -o ./userpatches/customize-image.sh https://gkktg.oss-cn-hangzhou.aliyuncs.com/customize-image.sh
           sudo --preserve-env \
             ./compile.sh kernel \
               ALLOW_ROOT=yes \
